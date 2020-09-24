@@ -25,8 +25,8 @@ declare -i cant=0 #una variable que guarda cuantos archivos tenemos
 #$1 es el directorio de aplicacion
 #que busque archivos con mylog, que use null como separador, que el while use null como IFS, que escape /
  
- #NO anda, preguntar porque!
-#find "$1" -type f -name "*mylog*" -print0 | while IFS= read -r archivo
+#find "$1" -type f -name "*mylog*" -print0 | while IFS= read -r archivo ESTO NO anda, preguntar porque!
+
 find "$1" -type f -name "*mylog*" | while read -r archivo
 do
     declare -i filesize="$(wc -c < "$archivo")" #tamanio del archivo en bytes
